@@ -9,6 +9,7 @@ import microbitImage from './microbit.png';
 import ev3Image from './ev3.png';
 import wedoImage from './wedo.png';
 import text2speechImage from './text2speech.png';
+import ruloImage from './rulo.png';
 
 import microbitPeripheralImage from './peripheral-connection/microbit/microbit-illustration.svg';
 import microbitMenuImage from './peripheral-connection/microbit/microbit-small.svg';
@@ -193,5 +194,19 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/wedo'
 
+    },
+    {
+        name: 'Rulo Scratch',
+        extensionId: 'rulo',
+        iconURL: ruloImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Build Rulo programs."
+                description="Description for the 'Rulo Scratch' extension"
+                id="gui.extension.rulo.description"
+            />
+        ),
+        featured: true,
+        disabled: false
     }
 ];
