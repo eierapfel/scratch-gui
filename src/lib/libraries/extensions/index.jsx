@@ -196,12 +196,12 @@ export default [
 
     },
     {
-        name: 'Rulo Scratch',
+        name: 'Scratch Robot',
         extensionId: 'rulo',
         iconURL: ruloImage,
         description: (
             <FormattedMessage
-                defaultMessage="Build Rulo programs."
+                defaultMessage="Build Robot programs."
                 description="Description for the 'Rulo Scratch' extension"
                 id="gui.extension.rulo.description"
             />
