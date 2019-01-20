@@ -1,23 +1,26 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import musicImage from './music.png';
-import penImage from './pen.png';
-import videoImage from './video-sensing.png';
-import translateImage from './translate.png';
-import microbitImage from './microbit.png';
-import ev3Image from './ev3.png';
-import wedoImage from './wedo.png';
-import text2speechImage from './text2speech.png';
-import ruloImage from './rulo.png';
+import musicImage          from './music.png';
+import penImage            from './pen.png';
+import videoImage          from './video-sensing.png';
+import translateImage      from './translate.png';
+import microbitImage       from './microbit.png';
+import ev3Image            from './ev3.png';
+import wedoImage           from './wedo.png';
+import text2SpeechImage    from './text2speech.png';
+import speech2TextImage    from './speech.png';
+import ruloImage           from './rulo.png';
+import turtlebotImage      from './turtlebot.png';
+import tfVideoSensingImage from './tfjs.png';
 
 import microbitPeripheralImage from './peripheral-connection/microbit/microbit-illustration.svg';
-import microbitMenuImage from './peripheral-connection/microbit/microbit-small.svg';
-import ev3PeripheralImage from './peripheral-connection/ev3/ev3-hub-illustration.svg';
-import ev3MenuImage from './peripheral-connection/ev3/ev3-small.svg';
-import wedoPeripheralImage from './peripheral-connection/wedo/wedo-illustration.svg';
-import wedoMenuImage from './peripheral-connection/wedo/wedo-small.svg';
-import wedoButtonImage from './peripheral-connection/wedo/wedo-button-illustration.svg';
+import microbitMenuImage       from './peripheral-connection/microbit/microbit-small.svg';
+import ev3PeripheralImage      from './peripheral-connection/ev3/ev3-hub-illustration.svg';
+import ev3MenuImage            from './peripheral-connection/ev3/ev3-small.svg';
+import wedoPeripheralImage     from './peripheral-connection/wedo/wedo-illustration.svg';
+import wedoMenuImage           from './peripheral-connection/wedo/wedo-small.svg';
+import wedoButtonImage         from './peripheral-connection/wedo/wedo-button-illustration.svg';
 
 export default [
     {
@@ -68,6 +71,8 @@ export default [
         ),
         extensionId: 'videoSensing',
         iconURL: videoImage,
+        featured: true,
+        disabled: false,
         description: (
             <FormattedMessage
                 defaultMessage="Sense motion with the camera."
@@ -86,7 +91,7 @@ export default [
             />
         ),
         extensionId: 'text2speech',
-        iconURL: text2speechImage,
+        iconURL: text2SpeechImage,
         description: (
             <FormattedMessage
                 defaultMessage="Make your projects talk."
@@ -95,6 +100,26 @@ export default [
             />
         ),
         featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Speech to Text"
+                description="Name for the Text to Speech extension"
+                id="gui.extension.speech2text.name"
+            />
+        ),
+        extensionId: 'speech2text',
+        iconURL: speech2TextImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Make your projects talk."
+                description="Description for the Text to speech extension"
+                id="gui.extension.speech2text.description"
+            />
+        ),
+        featured: true,
+        disabled: true,
     },
     {
         name: (
@@ -201,9 +226,37 @@ export default [
         iconURL: ruloImage,
         description: (
             <FormattedMessage
-                defaultMessage="Build Robot programs."
+                defaultMessage="お掃除ロボットなどを作る"
                 description="Description for the 'Rulo Scratch' extension"
                 id="gui.extension.rulo.description"
+            />
+        ),
+        featured: true,
+        disabled: false
+    },
+    {
+        name: 'Turtlebot',
+        extensionId: 'turtlebot',
+        iconURL: turtlebotImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Turtlebotのプログラムを作る"
+                description="Description for the 'Turtlebot Scratch' extension"
+                id="gui.extension.turtlebot.description"
+            />
+        ),
+        featured: true,
+        disabled: false
+    },
+    {
+        name: 'Tensorflow Video Sensing',
+        extensionId: 'tfVideoSensing',
+        iconURL: tfVideoSensingImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="AIを使った画像認識"
+                description="Description for the 'Tensorflow Video Sensing' extension"
+                id="gui.extension.tfVideoSensing.description"
             />
         ),
         featured: true,
