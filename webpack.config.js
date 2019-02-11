@@ -102,6 +102,12 @@ module.exports = [
             'compatibilitytesting': './src/playground/compatibility-testing.jsx',
             'player': './src/playground/player.jsx'
         },
+        //target: 'node',
+        node: {
+            fs: 'empty',
+            net: 'empty',
+            tls: 'empty',
+        },
         output: {
             path: path.resolve(__dirname, 'build'),
             filename: '[name].js'

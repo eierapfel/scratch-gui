@@ -13,6 +13,7 @@ import speech2TextImage    from './speech.png';
 import ruloImage           from './rulo.png';
 import turtlebotImage      from './turtlebot.png';
 import tfVideoSensingImage from './tfjs.png';
+import iftttImage          from './ifttt.png';
 
 import microbitPeripheralImage from './peripheral-connection/microbit/microbit-illustration.svg';
 import microbitMenuImage       from './peripheral-connection/microbit/microbit-small.svg';
@@ -257,6 +258,20 @@ export default [
                 defaultMessage="AIを使った画像認識"
                 description="Description for the 'Tensorflow Video Sensing' extension"
                 id="gui.extension.tfVideoSensing.description"
+            />
+        ),
+        featured: true,
+        disabled: false
+    },
+    {
+        name: 'ifttt',
+        extensionId: 'ifttt',
+        iconURL: iftttImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="家電を操作しよう"
+                description="Description for the 'IFTTT' extension"
+                id="gui.extension.IFTTT.description"
             />
         ),
         featured: true,
