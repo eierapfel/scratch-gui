@@ -13,6 +13,7 @@ import errorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
 import DragConstants from '../lib/drag-constants';
 import {emptyCostume} from '../lib/empty-assets';
 import sharedMessages from '../lib/shared-messages';
+import downloadBlob from '../lib/download-blob';
 
 import {
     closeCameraCapture,
@@ -86,6 +87,7 @@ class CostumeTab extends React.Component {
             'handleSelectCostume',
             'handleDeleteCostume',
             'handleDuplicateCostume',
+            'handleExportCostume',
             'handleNewCostume',
             'handleNewBlankCostume',
             'handleSurpriseCostume',
@@ -150,8 +152,17 @@ class CostumeTab extends React.Component {
     handleDuplicateCostume (costumeIndex) {
         this.props.vm.duplicateCostume(costumeIndex);
     }
-    handleNewCostume (costume) {
-        this.props.vm.addCostume(costume.md5, costume);
+    handleExportCostume (costumeIndex) {
+        const item = this.props.vm.editingTarget.sprite.costumes[costumeIndex];
+        const blob = new Blob([item.asset.data], {type: item.asset.assetType.contentType});
+        downloadBlob(`${item.name}.${item.asset.dataFormat}`, blob);
+    }
+    handleNewCostume (costume, fromCostumeLibrary) {
+        if (fromCostumeLibrary) {
+            this.props.vm.addCostumeFromLibrary(costume.md5, costume);
+        } else {
+            this.props.vm.addCostume(costume.md5, costume);
+        }
     }
     handleNewBlankCostume () {
         const name = this.props.vm.editingTarget.isStage ?
@@ -173,7 +184,7 @@ class CostumeTab extends React.Component {
             bitmapResolution: item.info.length > 2 ? item.info[2] : 1,
             skinId: null
         };
-        this.handleNewCostume(vmCostume);
+        this.handleNewCostume(vmCostume, true /* fromCostumeLibrary */);
     }
     handleSurpriseBackdrop () {
         const item = backdropLibraryContent[Math.floor(Math.random() * backdropLibraryContent.length)];
@@ -282,7 +293,8 @@ class CostumeTab extends React.Component {
                         onClick: this.handleFileUploadClick,
                         fileAccept: '.svg, .png, .jpg, .jpeg',
                         fileChange: this.handleCostumeUpload,
-                        fileInput: this.setFileInput
+                        fileInput: this.setFileInput,
+                        fileMultiple: true
                     },
                     {
                         title: intl.formatMessage(messages.addSurpriseCostumeMsg),
@@ -308,6 +320,7 @@ class CostumeTab extends React.Component {
                     this.handleDeleteCostume : null}
                 onDrop={this.handleDrop}
                 onDuplicateClick={this.handleDuplicateCostume}
+                onExportClick={this.handleExportCostume}
                 onItemClick={this.handleSelectCostume}
             >
                 {target.costumes ?
