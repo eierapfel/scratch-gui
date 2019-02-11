@@ -1,29 +1,34 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import musicImage from './music.png';
-import musicInsetImage from './music-small.svg';
-import penImage from './pen.png';
-import penInsetImage from './pen-small.svg';
-import videoImage from './video-sensing.png';
-import videoInsetImage from './video-sensing-small.svg';
-import translateImage from './translate.png';
-import translateInsetImage from './translate-small.png';
-import microbitImage from './microbit.png';
-import ev3Image from './ev3.png';
-import wedoImage from './wedo.png';
-import text2speechImage from './text2speech.png';
-import text2speechInsetImage from './text2speech-small.svg';
-import makeymakeyImage from './makeymakey.png';
-import makeymakeyInsetImage from './makeymakey-small.svg';
+import musicImage              from './music.png';
+import musicInsetImage         from './music-small.svg';
+import penImage                from './pen.png';
+import penInsetImage           from './pen-small.svg';
+import videoImage              from './video-sensing.png';
+import videoInsetImage         from './video-sensing-small.svg';
+import translateImage          from './translate.png';
+import translateInsetImage     from './translate-small.png';
+import microbitImage           from './microbit.png';
+import ev3Image                from './ev3.png';
+import wedoImage               from './wedo.png';
+import text2speechImage        from './text2speech.png';
+import text2speechInsetImage   from './text2speech-small.svg';
+import makeymakeyImage         from './makeymakey.png';
+import makeymakeyInsetImage    from './makeymakey-small.svg';
+import speech2TextImage        from './speech.png'
+import ruloImage               from './rulo.png';
+import turtlebotImage          from './turtlebot.png';
+import tfVideoSensingImage     from './tfjs.png';
+import iftttImage              from './ifttt.png';
 
 import microbitPeripheralImage from './peripheral-connection/microbit/microbit-illustration.svg';
-import microbitMenuImage from './peripheral-connection/microbit/microbit-small.svg';
-import ev3PeripheralImage from './peripheral-connection/ev3/ev3-hub-illustration.svg';
-import ev3MenuImage from './peripheral-connection/ev3/ev3-small.svg';
-import wedoPeripheralImage from './peripheral-connection/wedo/wedo-illustration.svg';
-import wedoMenuImage from './peripheral-connection/wedo/wedo-small.svg';
-import wedoButtonImage from './peripheral-connection/wedo/wedo-button-illustration.svg';
+import microbitMenuImage       from './peripheral-connection/microbit/microbit-small.svg';
+import ev3PeripheralImage      from './peripheral-connection/ev3/ev3-hub-illustration.svg';
+import ev3MenuImage            from './peripheral-connection/ev3/ev3-small.svg';
+import wedoPeripheralImage     from './peripheral-connection/wedo/wedo-illustration.svg';
+import wedoMenuImage           from './peripheral-connection/wedo/wedo-small.svg';
+import wedoButtonImage         from './peripheral-connection/wedo/wedo-button-illustration.svg';
 
 export default [
     {
@@ -107,6 +112,26 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Speech to Text"
+                description="Name for the Text to Speech extension"
+                id="gui.extension.speech2text.name"
+            />
+        ),
+        extensionId: 'speech2text',
+        iconURL: speech2TextImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Make your projects talk."
+                description="Description for the Text to speech extension"
+                id="gui.extension.speech2text.description"
+            />
+        ),
+        featured: true,
+        disabled: true,
     },
     {
         name: (
@@ -233,5 +258,68 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/wedo'
 
+    },
+    {
+        name: 'Scratch Robot',
+        extensionId: 'rulo',
+        collaborator: 'TeamSOBITS',
+        iconURL: ruloImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="お掃除ロボットなどを作る"
+                description="Description for the 'Rulo Scratch' extension"
+                id="gui.extension.rulo.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: true
+    },
+    {
+        name: 'Turtlebot',
+        extensionId: 'turtlebot',
+        collaborator: 'TeamSOBITS',
+        iconURL: turtlebotImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Turtlebotのプログラムを作る"
+                description="Description for the 'Turtlebot Scratch' extension"
+                id="gui.extension.turtlebot.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: true
+    },
+    {
+        name: 'Tensorflow Video Sensing',
+        extensionId: 'tfVideoSensing',
+        collaborator: 'TeamSOBITS',
+        iconURL: tfVideoSensingImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="AIを使った画像認識"
+                description="Description for the 'Tensorflow Video Sensing' extension"
+                id="gui.extension.tfVideoSensing.description"
+            />
+        ),
+        featured: true,
+        disabled: false
+    },
+    {
+        name: 'ifttt',
+        extensionId: 'ifttt',
+        collaborator: 'TeamSOBITS',
+        iconURL: iftttImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="家電を操作しよう"
+                description="Description for the 'IFTTT' extension"
+                id="gui.extension.IFTTT.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: true
     }
 ];
