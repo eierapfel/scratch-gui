@@ -29,6 +29,10 @@ import ev3MenuImage            from './peripheral-connection/ev3/ev3-small.svg';
 import wedoPeripheralImage     from './peripheral-connection/wedo/wedo-illustration.svg';
 import wedoMenuImage           from './peripheral-connection/wedo/wedo-small.svg';
 import wedoButtonImage         from './peripheral-connection/wedo/wedo-button-illustration.svg';
+import rosPeripheralImage      from './peripheral-connection/ros/ros-illustration.svg';
+import rosMenuImage            from './peripheral-connection/ros/ros-small.svg';
+import ruloMenuImage           from './peripheral-connection/rulo/rulo.svg';
+import iftttMenuImage          from './peripheral-connection/ifttt/ifttt.svg';
 
 export default [
     {
@@ -264,6 +268,16 @@ export default [
         extensionId: 'rulo',
         collaborator: 'TeamSOBITS',
         iconURL: ruloImage,
+        insetIconURL: ruloMenuImage,
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rosPeripheralImage,
+        smallPeripheralImage: rosMenuImage,
+        connectingMessage: 'Connected!',
+        helpLink: 'https://github.com',
         description: (
             <FormattedMessage
                 defaultMessage="お掃除ロボットなどを作る"
@@ -271,9 +285,6 @@ export default [
                 id="gui.extension.rulo.description"
             />
         ),
-        featured: true,
-        disabled: false,
-        internetConnectionRequired: true
     },
     {
         name: 'Turtlebot',
@@ -311,6 +322,7 @@ export default [
         extensionId: 'ifttt',
         collaborator: 'TeamSOBITS',
         iconURL: iftttImage,
+        insetIconURL: iftttMenuImage,
         description: (
             <FormattedMessage
                 defaultMessage="家電を操作しよう"

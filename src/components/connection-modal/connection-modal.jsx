@@ -1,16 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import keyMirror from 'keymirror';
+import PropTypes          from 'prop-types';
+import React              from 'react';
+import keyMirror          from 'keymirror';
 
-import Box from '../box/box.jsx';
-import Modal from '../../containers/modal.jsx';
+import Box                from '../box/box.jsx';
+import Modal              from '../../containers/modal.jsx';
 
-import ScanningStep from '../../containers/scanning-step.jsx';
-import AutoScanningStep from '../../containers/auto-scanning-step.jsx';
-import ConnectingStep from './connecting-step.jsx';
-import ConnectedStep from './connected-step.jsx';
-import ErrorStep from './error-step.jsx';
-import UnavailableStep from './unavailable-step.jsx';
+import ScanningStep       from '../../containers/scanning-step.jsx';
+import AutoScanningStep   from '../../containers/auto-scanning-step.jsx';
+import ConnectingStep     from './connecting-step.jsx';
+import ConnectedStep      from './connected-step.jsx';
+import ErrorStep          from './error-step.jsx';
+import UnavailableStep    from './unavailable-step.jsx';
+import RosUnavailableStep from './ros-unavailable-step.jsx';
 
 import styles from './connection-modal.css';
 
@@ -19,7 +20,8 @@ const PHASES = keyMirror({
     connecting: null,
     connected: null,
     error: null,
-    unavailable: null
+    unavailable: null,
+    ros_unavailable: null
 });
 
 const ConnectionModalComponent = props => (
@@ -39,6 +41,7 @@ const ConnectionModalComponent = props => (
             {props.phase === PHASES.connected && <ConnectedStep {...props} />}
             {props.phase === PHASES.error && <ErrorStep {...props} />}
             {props.phase === PHASES.unavailable && <UnavailableStep {...props} />}
+            {props.phase === PHASES.ros_unavailable && <RosUnavailableStep {...props} />}
         </Box>
     </Modal>
 );

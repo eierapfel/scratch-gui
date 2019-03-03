@@ -283,6 +283,25 @@
     margin-left: 0.5rem;
 }
 
+.ros-error-message {
+    color: red;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.ros-help-text {
+    text-align: left;
+    text-indent: 1.5rem;
+    margin-top: -0.5rem;
+    margin-bottom: -1.25rem;
+}
+
+.terminal-command {
+    font-family: Monospace;
+    font-size: 1.075rem;
+}
+
 .button-row {
     font-weight: bolder;
     text-align: center;
