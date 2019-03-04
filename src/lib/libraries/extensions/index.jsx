@@ -32,6 +32,7 @@ import wedoButtonImage         from './peripheral-connection/wedo/wedo-button-il
 import rosPeripheralImage      from './peripheral-connection/ros/ros-illustration.svg';
 import rosMenuImage            from './peripheral-connection/ros/ros-small.svg';
 import ruloMenuImage           from './peripheral-connection/rulo/rulo.svg';
+import turtlebotMenuImage      from './peripheral-connection/turtlebot/turtlebot.svg';
 import iftttMenuImage          from './peripheral-connection/ifttt/ifttt.svg';
 
 export default [
@@ -291,6 +292,7 @@ export default [
         extensionId: 'turtlebot',
         collaborator: 'TeamSOBITS',
         iconURL: turtlebotImage,
+        insetIconURL: turtlebotMenuImage,
         description: (
             <FormattedMessage
                 defaultMessage="Turtlebotのプログラムを作る"
