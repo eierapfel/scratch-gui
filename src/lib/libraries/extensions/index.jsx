@@ -21,6 +21,8 @@ import ruloImage               from './rulo.png';
 import turtlebotImage          from './turtlebot.png';
 import tfVideoSensingImage     from './tfjs.png';
 import iftttImage              from './ifttt.png';
+import newblocksImage from './newblocks.png'// 新しい拡張機能の画像をインポート
+import newblocksInsetImage from './newblocks-small.png' // 新しい拡張機能のアイコンをインポート
 
 import microbitPeripheralImage from './peripheral-connection/microbit/microbit-illustration.svg';
 import microbitMenuImage       from './peripheral-connection/microbit/microbit-small.svg';
@@ -335,5 +337,34 @@ export default [
         featured: true,
         disabled: false,
         internetConnectionRequired: true
+    },
+    // 新しい拡張機能の追加
+    ////{
+        //name: "New Blocks",
+        //extensionId: 'newblocks',
+        //iconURL: newblocksImage,
+        //insetIconURL: newblocksInsetImage,
+        //description: "New Extension",
+        //featured: true
+    //
+    {
+        name: 'newblocks',
+        extensionId: 'newblocks',
+        collaborator: 'Me',
+        iconURL: newblocksImage,
+        insetIconURL: newblocksInsetImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="New blocks."
+                description="my block"
+                id="gui.extension.newblocks.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        internetConnectionRequired: true
+        //bluetoothRequired: false,
+        //helpLink: 'https://scratch.mit.edu/wedo'
+
     }
 ];
