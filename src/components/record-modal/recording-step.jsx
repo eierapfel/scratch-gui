@@ -50,7 +50,7 @@ const RecordingStep = props => (
                         width={440}
                     />
                 ) : (
-                    <span className={styles.helpText}>
+                    <span className={'nasukento1'}>
                         {props.listening ? props.intl.formatMessage(messages.beginRecord) :
                             props.intl.formatMessage(messages.permission,
                                 {arrow: props.isRtl ? '↗️ \u00A0' : '↖️ \u00A0'}

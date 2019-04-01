@@ -50,6 +50,7 @@ const messages = defineMessages({
 });
 
 const DirectionPicker = props => (
+	//console.log("aaaaaaaaaaaaaaaaaa");
     <Label
         secondary
         above={props.labelAbove}

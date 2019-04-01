@@ -287,6 +287,7 @@ class Stage extends React.Component {
         this.setState({mouseDownTimeoutId: null});
     }
     drawDragCanvas (drawableData) {
+		console.log("drawDragCanvas");
         const {
             data,
             width,

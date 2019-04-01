@@ -9,7 +9,8 @@ import dialFace from './icon--dial.svg';
 import dialHandle from './icon--handle.svg';
 
 class Dial extends React.Component {
-    constructor (props) {
+	constructor(props) {
+		console.log("Dial.jsx");
         super(props);
         bindAll(this, [
             'handleMouseDown',
@@ -66,7 +67,8 @@ class Dial extends React.Component {
         return path.join(' ');
     }
 
-    handleMouseMove (e) {
+	handleMouseMove(e) {
+		console.log("handleMouseMove");
         this.props.onChange(this.directionToMouseEvent(e) + this.directionOffset);
         e.preventDefault();
     }
@@ -78,7 +80,8 @@ class Dial extends React.Component {
         window.removeEventListener('touchend', this.unbindMouseEvents);
     }
 
-    handleMouseDown (e) {
+	handleMouseDown(e) {
+		console.log("handleMouseDown");
         // Because the drag handle is not a single point, there is some initial
         // difference between the current sprite direction and the direction to the mouse
         // Store this offset to prevent jumping when the mouse is moved.
@@ -98,7 +101,8 @@ class Dial extends React.Component {
         this.handleElement = el;
     }
 
-    render () {
+	render() {
+		console.log("render_dial.jsx");
         const {direction, radius} = this.props;
         return (
             <div className={styles.container}>
